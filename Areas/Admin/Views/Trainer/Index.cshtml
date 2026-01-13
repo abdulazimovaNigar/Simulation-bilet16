@@ -1,5 +1,34 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<Trainer>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image URL</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category ID</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var trainer in Model)
+            {
+        <tr>
+                <th scope="row">@trainer.Id</th>
+                <td>@trainer.Name</td>
+                <td>@trainer.Image</td>
+                <td>@trainer.Description</td>
+                <td>@trainer.CategoryId</td>
+                <td>@trainer.IsDeleted</td>
+                <td>
+                    <a asp-route-id="@trainer.Id" asp-action="Update" class="btn btn-info">Update</a>
+                    <form asp-route-id="@trainer.Id" asp-action="Delete" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+        </tr>
+                
+            }
+
+    </tbody>
+</table>

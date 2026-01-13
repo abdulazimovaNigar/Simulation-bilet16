@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bilet16Trainers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cdcc006d6ca1f7060046e4d23702d2a10088090")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33b4fcfb8eff35fb4dbbf00ae8f57332448e6796")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bilet16Trainers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bilet16Trainers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
