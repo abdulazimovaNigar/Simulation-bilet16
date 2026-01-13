@@ -1,3 +1,6 @@
+using Bilet16Trainers.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 namespace Bilet16Trainers
 {
     public class Program
@@ -8,6 +11,10 @@ namespace Bilet16Trainers
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
+            );
+
 
             var app = builder.Build();
 
@@ -25,6 +32,11 @@ namespace Bilet16Trainers
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+            );
 
             app.MapControllerRoute(
                 name: "default",
